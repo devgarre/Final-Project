@@ -8,10 +8,11 @@
 #include <windows.h>
 
 using namespace std;
+int timeFrame;
 
-void timer(float min)
+void timer()
 {
-	Sleep(min * 60000);
+	Sleep(timeFrame * 60000);
 }
 
 string name(string input)
@@ -33,4 +34,11 @@ string rerun(string repeat)
 	cout << "Would you like to start another timer?(Y/N): ";
 	cin >> repeat;
 	return repeat;
+}
+
+int * modifyTimer() 
+{
+	cout << "How long would you like the timer to last?" << endl;
+	cin >> timeFrame;
+	return &timeFrame;
 }
